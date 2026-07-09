@@ -2,6 +2,8 @@
 
 Search layer: public scholarly metadata adapters for PubMed, Europe PMC, OpenAlex, and Crossref. No private PDFs, corpora, manuscripts, credentials, or internal workflow state.
 
+**License:** Apache-2.0
+
 ## SHawn OSS stack role
 
 ```text
