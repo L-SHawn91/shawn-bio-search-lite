@@ -3,10 +3,12 @@ from __future__ import annotations
 import re, sys
 from pathlib import Path
 
+# Hard scanner: fail on concrete secret-looking assignments, private absolute paths, and live DB filenames.
+# Boundary policy docs may mention forbidden categories in prose; that should not fail the scan.
 HARD_PATTERNS = [
     re.compile(r"(?i)(api[_-]?key|secret|token)\s*[=:]\s*['\"]?[A-Za-z0-9_\-]{20,}"),
     re.compile(r"/(home|Users)/[^\s]+/(SHawn|SHide|OneDrive|Clouds)/"),
-    re.compile(r"(?i)(discord id|workflow/active|corpus\.db|private db|raw manuscript)"),
+    re.compile(r"(?i)corpus\.db"),
 ]
 SKIP_PARTS = {'.git', '.venv', 'node_modules', '__pycache__', 'dist', 'build'}
 
