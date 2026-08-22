@@ -6,13 +6,13 @@ Search layer: public scholarly metadata adapters for PubMed, Europe PMC, OpenAle
 
 ## SHawn OSS stack role
 
-This repository is an **early-stage public-safe scaffold**. APIs are unstable. It supports the SHawn EvidenceMap flagship rather than replacing it.
+This repository is an **early-stage public-safe scaffold**. APIs are unstable. It supports the SHawn Research OS flagship rather than replacing it.
 
 | Layer | Public repo | Role |
 |---|---|---|
 | Search | [`shawn-bio-search-lite`](https://github.com/L-SHawn91/shawn-bio-search-lite) | Public scholarly metadata adapters |
 | Map | [`paper-map-lite`](https://github.com/L-SHawn91/paper-map-lite) | Toy claim/evidence graph schemas |
-| Report | [`SHawn-EvidenceMap`](https://github.com/L-SHawn91/SHawn-EvidenceMap) | Flagship evidence maps and public reports |
+| Report | [`SHawn-ResearchOS`](https://github.com/L-SHawn91/SHawn-ResearchOS) | Flagship evidence maps and public reports |
 | Coordinate | [`shawn-sync-lite`](https://github.com/L-SHawn91/shawn-sync-lite) | Public-safe manifests and boundary templates |
 | Execute safely | [`newbrain-router`](https://github.com/L-SHawn91/newbrain-router) | Dry-run routing and approval-gate examples |
 | QA docs | [`shawn-docx-qa`](https://github.com/L-SHawn91/shawn-docx-qa) / [`SHawn-hwp`](https://github.com/L-SHawn91/SHawn-hwp) | Document QA utilities |
