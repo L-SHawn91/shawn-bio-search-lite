@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  public-safe-suites:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install root package (editable) with dev extras
+        run: python -m pip install -e ".[dev]"
+      - name: Install component packages (editable) with dev extras
+        run: |
+          python -m pip install -e "packages/paper-map-lite[dev]"
+          python -m pip install -e "packages/shawn-sync-lite[dev]"
+      - name: Run root suite, component suites, and public-safety scans
+        run: python scripts/check_all.py
